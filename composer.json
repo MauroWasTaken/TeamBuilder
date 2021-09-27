@@ -1,0 +1,17 @@
+{
+    "name": "maurx/teambuilder",
+    "autoload": {
+        "psr-4": {
+            "Maurx\\Teambuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mauro-Alexandre COSTA-DOS-SANTOS",
+            "email": "Mauro-Alexandre.COSTA-DOS-SANTOS@cpnv.ch"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

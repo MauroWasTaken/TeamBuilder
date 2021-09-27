@@ -7,13 +7,17 @@ class DBTest extends TestCase
     {
         exec('mysql -u root <"C:\Users\maurx\OneDrive - CPNV\Bureau\CPNV\PRW1\Teambuilder\db\teambuilder.sql"');
     }
-//    public function TestSelectManyValid(): void
-//    {
-//        $this->assertEquals('user@example.com',DB::selectMany("SELECT * FROM roles", []));
-//    }
-    public function TestInsertValid(): void
+    public function testSelectManyValid(): void
     {
-        $this->assertEquals('user@example.com',insert("INSERT INTO roles(slug,name) VALUES (:slug, :name)", ["slug" => "XXX", "name" => "Slasher"]));
+        $this->testPrep();
+        $db=new DB();
+        $this->assertEquals('MEM',$db->selectMany("SELECT * FROM roles", [])[0]["slug"]);
+    }
+    public function testInsertValid(): void
+    {
+        $this->testPrep();
+        $db=new DB();
+        $this->assertEquals(3,$db->insert("INSERT INTO roles(slug,name) VALUES (:slug, :name)", ["slug" => "XXX", "name" => "Slasher"]));
     }
     public function testExecuteValid(): void
     {
@@ -30,10 +34,12 @@ class DBTest extends TestCase
         $db->execute("UPDATE roles set name = :name WHERE slug = :slug", ["slug" => "XXX", "name" => "Correcteur"]);
         $this->assertEquals(0,$db->execute("UPDATE roles set name = :name WHERE slug = :slug", ["slug" => "XXX", "name" => "Correcteur"]));
     }
-//    public function TestSelectOneValid(): void
-//    {
-//        $this->assertEquals('user@example.com',DB::selectOne("SELECT * FROM roles where slug = :slug", ["slug" => "MOD"]));
-//    }
+    public function testSelectOneValid(): void
+    {
+        $db=new DB();
+        $res = $db->selectOne("SELECT * FROM roles where slug = :slug", ["slug" => "MOD"]);
+        $this->assertSame($res['slug'], 'MOD');
+    }
 
 
 }

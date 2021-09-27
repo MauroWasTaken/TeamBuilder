@@ -1,0 +1,1 @@
+{"version":1,"defects":{"DBTest::testSelectOneValid":4,"DBTest::testInsertValid":3},"times":{"DBTest::testExecuteValid":2.206,"DBTest::testExecute2ndTime":0.467,"DBTest::testSelectOneValid":0.035,"DBTest::testInsertValid":0.371,"DBTest::testSelectManyValid":0.42}}
