@@ -2,8 +2,15 @@
     "name": "maurx/teambuilder",
     "autoload": {
         "psr-4": {
-            "Maurx\\Teambuilder\\": "src/"
-        }
+            "TeamBuilder\\controller\\": "controller",
+            "TeamBuilder\\model\\": [
+                "src/model",
+                "test/model"
+            ]
+        },
+        "files": [
+            "config/DatabaseConfig.php"
+        ]
     },
     "authors": [
         {
@@ -13,5 +20,8 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^9.5"
+    },
+    "require": {
+        "ext-pdo": "*"
     }
 }
