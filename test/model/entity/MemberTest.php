@@ -1,6 +1,6 @@
 <?php
 
-require "model/Member.php";
+namespace TeamBuilder\model\entity;
 
 use PHPUnit\Framework\TestCase;
 
@@ -96,7 +96,7 @@ class MemberTest extends TestCase
 
     protected function setUp(): void
     {
-        //TODO mettre les variables dans un autre fichier path username et password.
-        exec('mysql -u root <"' . dirname(__DIR__) . '\db\teambuilder.sql"');
+        $str = "mysql -u " . USERNAME . " <\"" . SQLPATH . "\"";
+        exec($str);
     }
 }
