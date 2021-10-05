@@ -2,6 +2,7 @@
     "name": "maurx/teambuilder",
     "autoload": {
         "psr-4": {
+            "TeamBuilder\\controller\\": "controller",
             "TeamBuilder\\model\\": [
                 "src/model",
                 "test/model"

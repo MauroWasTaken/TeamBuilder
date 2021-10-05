@@ -37,7 +37,9 @@ class Member extends Entity
 
     public function teams(): array
     {
-        return [];
+        $query = "SELECT teams.id, teams.name,teams.state_id FROM members INNER JOIN team_member ON members.id=team_member.member_id INNER JOIN teams ON teams.id=team_member.team_id WHERE members.id = :id;";
+        $queryResults = self::createDatabase()->fetchRecords($query, Team::class, ["id" => $this->id]);
+        return $queryResults;
     }
     //endregion
 }

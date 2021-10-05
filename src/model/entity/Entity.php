@@ -54,13 +54,13 @@ abstract class Entity
         return static::TABLE_NAME;
     }
 
-    protected static function createDatabase(): Database
+    public static function createDatabase(): Database
     {
 
         return new Database();
     }
 
-    public static function find(int $id): ?Entity
+    public static function find($id): ?Entity
     {
         $tableName = self::getTableName();
         $query = "SELECT * FROM $tableName WHERE id=:id";
