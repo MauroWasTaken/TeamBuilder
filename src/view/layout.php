@@ -10,6 +10,7 @@
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Milligram -->
+    <link rel="stylesheet" href="src/view/css/milligram.css">
     <link rel="stylesheet" href="src/view/css/styles.css">
     <title>ExerciseLooper</title>
 </head>

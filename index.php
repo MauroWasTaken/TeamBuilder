@@ -2,6 +2,7 @@
 require_once 'vendor/autoload.php';
 require_once 'src/controller/HomeController.php';
 require_once 'src/controller/MemberController.php';
+require_once 'src/controller/TeamController.php';
 session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -18,6 +19,14 @@ if (isset($_GET['action'])) {
         case 'MembersList' :
             $memberController = new MemberController();
             $memberController->displayMembersList();
+            break;
+        case 'MyTeams' :
+            $memberController = new MemberController();
+            $memberController->displayMyTeams();
+            break;
+        case 'Team' :
+            $teamController = new TeamController();
+            $teamController->displayTeamPage($_GET["id"]);
             break;
         // Permet d'afficher la home de base au lancement du site
         default :

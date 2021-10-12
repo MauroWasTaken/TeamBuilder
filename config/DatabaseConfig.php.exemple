@@ -1,0 +1,8 @@
+<?php
+//suprimez .exemple du nom du fichier
+define("DSN", "mysql:host=localhost;dbname=teambuilder");
+define("USERNAME", "username");
+define("PASSWORD", "password");
+define("SQLPATH", dirname(__DIR__) . "/db/teambuilder.sql");
+//member that you want to be autologged in into
+define("AUTOLOGINID", 8);

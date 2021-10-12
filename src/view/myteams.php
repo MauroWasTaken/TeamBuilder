@@ -20,26 +20,21 @@ ob_start();
       }
     </style>
     <header class="heading managing">
-        <h1 style="text-align: center">Members List</h1>
+        <div style="text-align: center">Mes equipes</div>
+
     </header>
     <table>
         <tr>
-            <th>teamname</th>
-            <th>Equipe(s)</th>
+            <th>team name</th>
+            <th>nb members</th>
+            <th>team captain</th>
         </tr>
         <?php
-        foreach ($membersList as $member): ?>
+        foreach ($teams as $team): ?>
             <tr>
-                <td><?= $member->name ?></td>
-                <td>
-                    <?= implode(
-                        ', ',
-                        array_map(
-                            function ($obj) { return "<a href='#'>" . $obj->name . "</a>"; },
-                            $member->teams()
-                        )
-                    ) ?>
-                </td>
+                <td><a href="/?action=Team&id=<?= $team->id ?>"><?= $team->name ?></a></td>
+                <td><?= count($team->getMembers()) ?></td>
+                <td><?= $team->getCaptain()->name ?></td>
             </tr>
         <?php
         endforeach; ?>
