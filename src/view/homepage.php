@@ -11,6 +11,7 @@ ob_start();
             <div class="column">
                 <a class="button results column" href="/?action=MembersList">Questions list</a>
                 <a class="button results column" href="/?action=MyTeams">my questions</a>
+                <a class="button results column" href="/?action=ModeratorsList">my questions</a>
             </div>
         </section>
     </div>

@@ -24,10 +24,15 @@ if (isset($_GET['action'])) {
             $memberController = new MemberController();
             $memberController->displayMyTeams();
             break;
+        case 'ModeratorsList' :
+            $memberController = new MemberController();
+            $memberController->displayModeratorsList();
+            break;
         case 'Team' :
             $teamController = new TeamController();
             $teamController->displayTeamPage($_GET["id"]);
             break;
+
         // Permet d'afficher la home de base au lancement du site
         default :
             $homeController = new HomeController();

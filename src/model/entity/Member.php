@@ -37,8 +37,19 @@ class Member extends Entity
 
     public function teams(): array
     {
-        $query = "SELECT teams.id, teams.name,teams.state_id FROM members INNER JOIN team_member ON members.id=team_member.member_id INNER JOIN teams ON teams.id=team_member.team_id WHERE members.id = :id;";
+        $query =
+            "SELECT teams.id, teams.name,teams.state_id FROM members INNER JOIN team_member ON members.id=team_member.member_id INNER JOIN teams ON teams.id=team_member.team_id WHERE members.id = :id;";
         $queryResults = self::createDatabase()->fetchRecords($query, Team::class, ["id" => $this->id]);
+        return $queryResults;
+    }
+
+    public static function findByRoleSlug(string $slug)
+    {
+        $query = "SELECT members.id, members.name, members.password, members.role_id FROM members
+                    right join roles on members.role_id = roles.id
+                    Where roles.slug=:slug
+                    ORDER BY members.name;";
+        $queryResults = self::createDatabase()->fetchRecords($query, Member::class, ["slug" => $slug]);
         return $queryResults;
     }
     //endregion

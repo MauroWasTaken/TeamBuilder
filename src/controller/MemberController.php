@@ -18,4 +18,10 @@ class MemberController
         $teams = $_SESSION["loggedmember"]->teams();
         require_once "src/view/myteams.php";
     }
+
+    function displayModeratorsList()
+    {
+        $membersList = Member::findByRoleSlug("MOD");
+        require_once "src/view/moderators.php";
+    }
 }
