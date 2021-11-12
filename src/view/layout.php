@@ -16,5 +16,6 @@
 </head>
 <body>
 <?= $content ?>
+    Version: Début Examen - Mauro
 </body>
 </html>
