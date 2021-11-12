@@ -1,6 +1,6 @@
 <?php
 
-namespace Teambuilder\model\entity;
+namespace TeamBuilder\model\entity;
 
 class Role extends Entity
 {

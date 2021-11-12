@@ -4,7 +4,10 @@ ob_start();
 ?>
     <header class="heading managing">
         <div style="text-align: center">WELCOME</div>
-        <h1 style="text-align: right">salut: <?= $_SESSION["loggedmember"]->name ?></h1>
+        <h1 style="text-align: right">salut: <a
+              href="/?action=MemberProfile&id=<?= $_SESSION["loggedmember"]->id ?>"><?=
+                $_SESSION["loggedmember"]->name
+                ?></a></h1>
     </header>
     <div class="container dashboard">
         <section class="row">

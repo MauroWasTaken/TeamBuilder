@@ -14,7 +14,8 @@ class Member extends Entity
 
     protected string $name;
     protected string $password;
-    protected int $role_id;
+    protected int    $role_id;
+    protected int    $status;
 
     //endregion
 
@@ -24,7 +25,7 @@ class Member extends Entity
      * Search a member where value equal column.
      *
      * @param string $column The column.
-     * @param int $value The value searched.
+     * @param int    $value  The value searched.
      *
      * @return array An array of members founds, empty if not found.
      */

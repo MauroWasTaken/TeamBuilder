@@ -32,7 +32,10 @@ if (isset($_GET['action'])) {
             $teamController = new TeamController();
             $teamController->displayTeamPage($_GET["id"]);
             break;
-
+        case 'MemberProfile' :
+            $memberController = new MemberController();
+            $memberController->displayMemberProfile($_GET["id"]);
+            break;
         // Permet d'afficher la home de base au lancement du site
         default :
             $homeController = new HomeController();

@@ -1,7 +1,7 @@
 <?php
 
-use \TeamBuilder\model\entity\Member;
-use \TeamBuilder\model\entity\Team;
+use TeamBuilder\model\entity\Member;
+use TeamBuilder\model\entity\Team;
 
 class TeamController
 {

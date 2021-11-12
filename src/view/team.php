@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-/** @var \Teambuilder\model\entity\Team $team */
+/** @var \TeamBuilder\model\entity\Team $team */
 ?>
     <header class="heading managing">
         <div style="text-align: center"><?= $team->name ?></div>

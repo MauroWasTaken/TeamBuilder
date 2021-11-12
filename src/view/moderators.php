@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-/** @var \Teambuilder\model\entity\Team $membersList */
+/** @var \TeamBuilder\model\entity\Team $membersList */
 ?>
     <header class="heading managing">
         <h1 style="text-align: center">Moderators List</h1>

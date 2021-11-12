@@ -1,6 +1,8 @@
 <?php
 
 ob_start();
+/** @var \TeamBuilder\model\entity\Member[] $membersList */
+/** @var bool $isModerator */
 ?>
     <style>
       table {
@@ -30,7 +32,14 @@ ob_start();
         <?php
         foreach ($membersList as $member): ?>
             <tr>
-                <td><?= $member->name ?></td>
+                <?php
+                if ($isModerator): ?>
+                    <td><a href="/?action=MemberProfile&id=<?= $member->id ?>"><?= $member->name ?></a></td>
+                <?php
+                else: ?>
+                    <td><?= $member->name ?></td>
+                <?php
+                endif; ?>
                 <td>
                     <?= implode(
                         ', ',
