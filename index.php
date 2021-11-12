@@ -36,6 +36,14 @@ if (isset($_GET['action'])) {
             $memberController = new MemberController();
             $memberController->displayMemberProfile($_GET["id"]);
             break;
+        case 'ModifyProfile' :
+            $memberController = new MemberController();
+            $memberController->modifyProfile($_GET["id"]);
+            break;
+        case 'SaveProfile' :
+            $memberController = new MemberController();
+            $memberController->saveProfile($_GET["id"], $_POST);
+            break;
         // Permet d'afficher la home de base au lancement du site
         default :
             $homeController = new HomeController();

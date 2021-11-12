@@ -16,6 +16,6 @@
 </head>
 <body>
 <?= $content ?>
-    <br>Version: Début Examen - Mauro
+    <br>Version: Fin Examen - Mauro
 </body>
 </html>
